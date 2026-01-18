@@ -249,6 +249,7 @@ function getScreenScaleFactor() {
   return { sizeFactor, width, height };
 }
 
+
 // Get current screen scale
 let screenScale = getScreenScaleFactor();
 
