@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>ENVO - envo game</title>
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Press+Start+2P" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/main.css">
+    <link rel="icon" href="http://www.unixstickers.com/image/cache/data/stickers/spaceinvaders/Space-medium-invader.sh-600x600.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="landing-page">
+      <canvas id="logo-canvas"></canvas>
+      <div class="button-group" style="position: relative; z-index: 10;">
+        <div id="play-btn" class="start-text">Start</div>
+      </div>
+    </div>
+
+    <!-- Game Page -->
+    <div id="game-page" class="game-page hidden">
+      <div id="game-info">
+        <div id="lives-display">LIVES: 3</div>
+        <div id="score-display">SCORE: 0</div>
+        <div id="level-display">LEVEL: 1</div>
+        <button id="fullscreen-btn" class="fullscreen-btn" title="Toggle Fullscreen">⛶</button>
+      </div>
+      <canvas id="game-canvas"></canvas>
+      <div id="mobile-controls" class="mobile-controls hidden">
+        <div id="touch-area"></div>
+      </div>
+    </div>
+
+    <!-- Win Screen -->
+    <div id="win-screen" class="win-screen hidden">
+      <div class="contact-box">
+        <h1>THANKS FOR PLAYING</h1>
+        <p style="color:#fff; margin-bottom:18px;">If you'd like to send a message, use the box below.</p>
+        <textarea id="contact-message" placeholder="Write a short message..." style="width:100%; height:90px; box-sizing:border-box; font-family:'PressStart2P';"></textarea>
+        <div style="display:flex; gap:12px; justify-content:center; margin-top:18px;">
+          <button id="send-contact" class="scene-button">Send</button>
+          <button id="restart-btn" class="play-button">PLAY AGAIN</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="Scripts/script.js"></script>
+    <script type="text/javascript" src="Scripts/dvd.js"></script>
+    <footer class="site-footer">© 2026 Envo Group</footer>
+  </body>
+</html>
