@@ -86,25 +86,11 @@ playerImage.onload = () => {
   // Image loaded, ready to draw player
 };
 
-// Load enemy sprite image
-const enemyImage = new Image();
-enemyImage.src = "Images/enimy.png";
-enemyImage.onload = () => {
-  // Image loaded, ready to draw enemies
-};
-
-// Load enemy sprite animation frame pairs (each pair = 2 frames)
-const enemySpritePairs = [
-  // Pair 0: frames A and B
-  [
-    (() => { const img = new Image(); img.src = "Images/enemy.9.png"; return img; })(),
-    (() => { const img = new Image(); img.src = "Images/enemy.10.png"; return img; })()
-  ],
-  // Pair 1: frames A and B
-  [
-    (() => { const img = new Image(); img.src = "Images/enemy.7.png"; return img; })(),
-    (() => { const img = new Image(); img.src = "Images/enemy.8.png"; return img; })()
-  ]
+// Load enemy sprite images (3 variants)
+const enemyImages = [
+  (() => { const img = new Image(); img.src = "Images/enimy.png"; return img; })(),
+  (() => { const img = new Image(); img.src = "Images/enemy.8.png"; return img; })(),
+  (() => { const img = new Image(); img.src = "Images/enemy.9.png"; return img; })()
 ];
 
 // Fullscreen logo canvas setup
@@ -391,11 +377,8 @@ function createENVOFormation() {
             width: cellSize,
             height: cellSize,
             vx: enemy_vx,
-            // Sprite animation properties - choose pair based on id for variety
-            spritePairIndex: (enemySpritePairs && enemySpritePairs.length > 0) ? (id % enemySpritePairs.length) : 0,
-            spriteFrameIndex: 0,
-            spriteFrameTimer: 0,
-            spriteFrameInterval: 360, // faster alternation for visible animation
+            // Choose image variant based on id
+            imageIndex: id % enemyImages.length,
             isUFO: true,
             color: color,
             letter: null,
@@ -581,20 +564,17 @@ function drawPlayer() {
 // Draw enemy
 function drawEnemy(enemy) {
   if (enemy.isAlive && !enemy.isDead) {
-    // Use sprite animation frames (paired images)
-    if (enemySpritePairs && enemy.spritePairIndex >= 0 && enemy.spritePairIndex < enemySpritePairs.length) {
-      const pair = enemySpritePairs[enemy.spritePairIndex];
-      const frameImg = pair[enemy.spriteFrameIndex];
-      if (frameImg && frameImg.complete && frameImg.naturalWidth > 0) {
-        gameCtx.drawImage(frameImg, enemy.x, enemy.y, enemy.width, enemy.height);
+    // Draw enemy with assigned image variant
+    if (enemyImages && enemy.imageIndex >= 0 && enemy.imageIndex < enemyImages.length) {
+      const img = enemyImages[enemy.imageIndex];
+      if (img && img.complete && img.naturalWidth > 0) {
+        gameCtx.drawImage(img, enemy.x, enemy.y, enemy.width, enemy.height);
         return;
       }
     }
     
-    // Draw enemy sprite if loaded
-    if (enemyImage.complete && enemyImage.naturalWidth > 0) {
-      gameCtx.drawImage(enemyImage, enemy.x, enemy.y, enemy.width, enemy.height);
-    } else if (enemy.isUFO) {
+    // Fallback - draw colored rectangle
+    if (enemy.isUFO) {
       drawAnimeUFO(enemy);
     } else {
       gameCtx.fillStyle = enemy.color;
@@ -1020,15 +1000,6 @@ function updateEnemies() {
             height: 12
           });
         }
-      }
-    }
-    
-    // Update sprite animation frame (paired: 0 or 1)
-    if (enemy.isAlive && enemySpritePairs && enemy.spritePairIndex >= 0 && enemy.spritePairIndex < enemySpritePairs.length) {
-      enemy.spriteFrameTimer += 16.67; // ~60fps frame time in milliseconds
-      if (enemy.spriteFrameTimer >= enemy.spriteFrameInterval) {
-        enemy.spriteFrameTimer = 0;
-        enemy.spriteFrameIndex = (enemy.spriteFrameIndex + 1) % 2; // Alternate between 0 and 1
       }
     }
     
