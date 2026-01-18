@@ -243,7 +243,7 @@ For developers who want to understand the system:
 ## 🔗 File Locations
 
 ```
-d:\EnvoGame\
+d:\PXLGame\
 ├── Scripts/script.js ..................... Main game with shields
 ├── index.html ............................ Game launcher
 │

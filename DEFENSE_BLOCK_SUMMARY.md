@@ -301,5 +301,5 @@ The system is **production-ready** and fully tested. Players can now destroy ind
 
 **Status**: ✅ COMPLETE  
 **Date**: January 15, 2026  
-**Location**: `d:\EnvoGame\Scripts\script.js`  
-**Documentation**: `d:\EnvoGame\DEFENSE_*.md`
+**Location**: `d:\PXLGame\Scripts\script.js`  
+**Documentation**: `d:\PXLGame\DEFENSE_*.md`

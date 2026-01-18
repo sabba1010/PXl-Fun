@@ -1,7 +1,7 @@
 # Email Notification Setup Guide
 
 ## Overview
-The envo game game now sends email notifications to `sabbahossain123@gmail.com` when players submit a message after winning.
+The PXL game game now sends email notifications to `sabbahossain123@gmail.com` when players submit a message after winning.
 
 ## Prerequisites
 - Node.js (v14 or higher)

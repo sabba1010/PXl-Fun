@@ -107,7 +107,7 @@ White → Black → White → Black (continuous toggle)
 ```
 ┌────────────────────────────────────────────┐
 │                                            │
-│          [ENVO Enemy Formation]            │
+│          [PXL Enemy Formation]            │
 │                                            │
 │      Shield Rendering (Letter-Shaped):    │
 │                                            │

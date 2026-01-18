@@ -295,12 +295,12 @@ let enemies = [];
 let defensiveBlocks = [];
 const sceneBtn = document.getElementById("scene-btn");
 
-// Enemy formations for ENVO letters - 10-12 ENEMIES TOTAL
-function createENVOFormation() {
+// Enemy formations for PXL letters - 10-12 ENEMIES TOTAL
+function createPXLFormation() {
   enemies = [];
   gameState.enemiesDefeated = 0;
 
-  // Letter pixel patterns - 5x5 grids for clear ENVO readability
+  // Letter pixel patterns - 5x5 grids for clear PXL readability
   const patterns = {
     E: [
       "11111",
@@ -905,7 +905,7 @@ function restartGame() {
   levelDisplay.textContent = `LEVEL: ${gameLevel}`;
 
   // এলিমেন্টগুলো নতুন করে তৈরি করুন
-  createENVOFormation();
+  createPXLFormation();
   createDefensiveBlocks();
 
   // এনিমিদের স্পিড আপডেট করুন
@@ -1122,7 +1122,7 @@ function restartGame() {
   levelDisplay.textContent = `LEVEL: 1`;
 
   // ৪. নতুন এনিমি ও ব্লক তৈরি
-  createENVOFormation();
+  createPXLFormation();
   createDefensiveBlocks();
 
   // ৫. সব এনিমির vx সিঙ্ক করা (যাতে আগের স্পিড না থাকে)
@@ -1292,7 +1292,7 @@ enemy_vx = calculateEnemySpeed(gameLevel);
   livesDisplay.textContent = `LIVES: 3`;
   scoreDisplay.textContent = `SCORE: 0`;
   
-  createENVOFormation();
+  createPXLFormation();
   createDefensiveBlocks();
   gameLoop();
 });
@@ -1375,7 +1375,7 @@ if (isMobile) {
       livesDisplay.textContent = `LIVES: 3`;
       scoreDisplay.textContent = `SCORE: 0`;
       
-      createENVOFormation();
+      createPXLFormation();
       createDefensiveBlocks();
       gameLoop();
     }

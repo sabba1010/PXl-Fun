@@ -6,7 +6,7 @@
 ```
 ╔════════════════════════════════════════════════════════════╗
 ║                                                            ║
-║                      [ENVO ENEMIES]                        ║
+║                      [PXL ENEMIES]                        ║
 ║                   UFO  UFO  UFO  UFO                       ║
 ║                   UFO  UFO  UFO  UFO                       ║
 ║                   UFO  UFO  UFO  UFO                       ║
@@ -39,7 +39,7 @@ Colors: Blue(E), Cream(N), Yellow(V), Orange(O)
 ```
 ╔════════════════════════════════════════════════════════════╗
 ║                                                            ║
-║                      [ENVO ENEMIES]                        ║
+║                      [PXL ENEMIES]                        ║
 ║                   UFO  UFO  UFO  UFO                       ║
 ║                   UFO  UFO  UFO  UFO                       ║
 ║                   UFO  UFO  UFO  UFO                       ║
@@ -73,7 +73,7 @@ Approx 60/100 cells alive per shield
 ```
 ╔════════════════════════════════════════════════════════════╗
 ║                                                            ║
-║                      [ENVO ENEMIES]                        ║
+║                      [PXL ENEMIES]                        ║
 ║                   UFO  UFO  UFO  UFO                       ║
 ║                   UFO  UFO  UFO  UFO                       ║
 ║                   UFO  UFO  UFO  UFO                       ║

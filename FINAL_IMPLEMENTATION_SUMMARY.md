@@ -173,7 +173,7 @@ playBtn.addEventListener("click", () => {
   enemy_vx = calculateEnemySpeed(gameLevel);  // Reset speed
   
   // ... create formations and blocks ...
-  createENVOFormation();
+  createPXLFormation();
   createDefensiveBlocks();
   gameLoop();
 });

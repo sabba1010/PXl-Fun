@@ -229,7 +229,7 @@ function restartGame() {
 ## 💾 File Locations
 
 ```
-d:\EnvoGame\
+d:\PXLGame\
 ├── Scripts\
 │   └── script.js  ← Main game file with shields
 ├── index.html     ← Game page
